@@ -1,6 +1,7 @@
 use std::fs;
-
-pub fn search(query:&str,file:&str)->Vec<String>{
+ 
+  #[allow(dead_code)]
+pub fn search(query:&str,file:&str)->Result<Vec<String>,Box<dyn std::error::Error>>{
     let mut ve=Vec::new();
     let query=query;
     let file=file;
@@ -17,5 +18,5 @@ pub fn search(query:&str,file:&str)->Vec<String>{
         }
      }
      let ve=ve;
-  ve
+  Ok(ve)
 }
