@@ -1,10 +1,16 @@
 
+pub struct Afd<'a>{
+   pub query:&'a String,
+    pub file:&'a String
+}
 
-pub fn getting_command(args:&[String]) -> (&str,&str){
-   
-    let query =&args[1] ;
-    let file=&args[2];
-
-    (query,file)
-   
+ impl <'a> Afd<'a>{
+    pub fn getting_command(args:&'a[String]) -> Afd<'a>{
+      
+        let query =&args[1] ;
+        let file=&args[2];
+    
+        Afd{query,file}
+       
+    }
 }

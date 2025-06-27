@@ -1,6 +1,7 @@
 use std::fs;
  
   #[allow(dead_code)]
+  
 pub fn search(query:&str,file:&str)->Result<Vec<String>,Box<dyn std::error::Error>>{
     let mut ve=Vec::new();
     let query=query;
