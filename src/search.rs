@@ -1,6 +1,6 @@
 use std::fs;
 
-pub fn search(query:&str,file:&str){
+pub fn search(query:&str,file:&str)->Vec<String>{
     let mut ve=Vec::new();
     let query=query;
     let file=file;
@@ -9,10 +9,13 @@ pub fn search(query:&str,file:&str){
       
        
 
-     for words in hg.split_whitespace(){
-        if words.to_string() == query {
+     for words in hg.lines(){
+        let  words=words.to_lowercase();
+        let query=&query.to_lowercase();
+        if words.contains(query) {
             ve.push(words);
         }
      }
-  println!("{:?}",ve);
+     let ve=ve;
+  ve
 }
